@@ -13,8 +13,6 @@
   }
   return acc;
 }, {});
-
-$: console.log(weights);
 </script>
 
 <h1>SvelteKit Data App</h1>
