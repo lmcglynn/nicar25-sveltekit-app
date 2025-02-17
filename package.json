@@ -26,6 +26,7 @@
 	},
 	"dependencies": {
 		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"d3-scale": "^4.0.2",
 		"layercake": "^8.4.2"
 	}
 }
