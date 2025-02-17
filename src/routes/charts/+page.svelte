@@ -6,12 +6,12 @@
   import AxisX from '$components/layercake/AxisX.percent-range.html.svelte';
   import AxisY from '$components/layercake/AxisY.percent-range.html.svelte';
 
-  export let data; // `data` contains everything returned from `+layout.js`
-  const breedsData = data.breedsData;
+  import { filteredBreedsStore } from '$stores/filteredBreedsStore';
+  $: filteredBreeds = $filteredBreedsStore || [];
 
-  $: breedNames = breedsData.map(d => d.name);
+  $: breedNames = filteredBreeds.map(d => d.name);
 
-  const dataCountries = Object.entries(breedsData.reduce((acc, obj) => {
+  $: dataCountries = Object.entries(filteredBreeds.reduce((acc, obj) => {
       const value = obj.origin;
       acc[value] = (acc[value] || 0) + 1;
       return acc;
@@ -19,7 +19,7 @@
     .map(([option, instances]) => ({ option, instances }))
     .filter(item => item.instances > 1);
 
-  const dataSpan = Object.entries(breedsData.reduce((acc, obj) => {
+  $:  dataSpan = Object.entries(filteredBreeds.reduce((acc, obj) => {
       const value = obj.life_span;
       acc[value] = (acc[value] || 0) + 1;
       return acc;
@@ -27,7 +27,7 @@
     .map(([option, instances]) => ({ option, instances }))
     .filter(item => item.instances > 1);
 
-  const dataWeights = Object.entries(breedsData.reduce((acc, obj) => {
+  $:  dataWeights = Object.entries(filteredBreeds.reduce((acc, obj) => {
     const value = obj.weight.imperial;
     acc[value] = (acc[value] || 0) + 1;
     return acc;
@@ -36,6 +36,7 @@
     .filter(item => item.instances > 1);
 </script>
 
+<div class="w-full justify-between items-center">
 <h2 class="mb-4">Cats by Country of Origin</h2>
 <div class="chart-container mb-16">
   <LayerCake
@@ -106,6 +107,7 @@
       <Column />
     </ScaledSvg>
   </LayerCake>
+</div>
 </div>
 
 <style>

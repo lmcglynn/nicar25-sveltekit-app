@@ -1,7 +1,8 @@
 <script>
-import "../app.css";
-export let options;  
-</script>
+  import "../app.css";
+  export let options;  
+  import selectedCountry from '$stores/countryStore';
+</script> 
 
 <div class="w-full flex justify-between items-center bg-black px-4 py-8">
   <span class="text-xl font-bold text-white	">First SvelteKit Data App</span>
@@ -15,9 +16,10 @@ export let options;
   <div>
     Country of Origin:
   </div>
-  <select class="ml-4" name="country" id="country">
-    <option value="">-</option>
+  <select bind:value={$selectedCountry}>
+    <option value='All'>All countries</option>
     {#each options as country}
       <option value={country}>{country}</option>
     {/each}
+  </select>
 </div>
