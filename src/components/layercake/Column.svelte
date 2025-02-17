@@ -7,8 +7,8 @@
 
   const { data, xGet, yGet, x, yRange, xScale, y, height } = getContext('LayerCake');
 
-  /** @type {String} [fill='#35b5ac'] - The shape's fill color. */
-  export let fill = '#35b5ac';
+  /** @type {String} [fill='#66c2a5'] - The shape's fill color. */
+  export let fill = '#66c2a5';
 
   /** @type {String} [stroke='#000'] - The shape's stroke color. */
   export let stroke = '#000';

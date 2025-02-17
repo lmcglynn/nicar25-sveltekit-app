@@ -12,6 +12,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
+		"@poppanator/sveltekit-svg": "^5.0.0",
 		"@skeletonlabs/skeleton": "^2.11.0",
 		"@skeletonlabs/tw-plugin": "^0.4.1",
 		"@sveltejs/adapter-auto": "^4.0.0",
@@ -27,6 +28,8 @@
 	"dependencies": {
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"d3-scale": "^4.0.2",
-		"layercake": "^8.4.2"
+		"layercake": "^8.4.2",
+		"svelte-inline-svg": "^1.2.0",
+		"vite-plugin-svgr": "^4.3.0"
 	}
 }
