@@ -4,7 +4,6 @@
   import selectedCountry from "$stores/countryStore";  
   import { filteredBreedsStore } from '$stores/filteredBreedsStore';
 
-
   export let data;
   let countries = data.countries;
   let breeds = data.breeds;
@@ -19,6 +18,6 @@
 
 <Header options={countries} />
 
-<main class="container mx-auto my-6 flex justify-center w-full">
+<main class="container flex justify-center w-full mx-auto mt-40 mb-8">
   <slot />
 </main>

@@ -1,4 +1,7 @@
+// 🐱 uncomment line 2, comment-out line 3 to load our data
 import breeds from '$lib/data/breeds.json';
+// let breeds = [];
+let countries = [];
 
 export function load() {
   // Create a map to count occurrences of "origin" values
@@ -10,8 +13,8 @@ export function load() {
     return acc;
   }, {});
 
-  // Filter out origins that occur more than twice
-  const countries = Object.keys(originCount).filter(origin => originCount[origin] > 2);
+  // Filter out countries that occur more than twice
+  countries = Object.keys(originCount).filter(origin => originCount[origin] > 2);
 
   return { breeds, countries };
 }

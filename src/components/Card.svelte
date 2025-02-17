@@ -4,7 +4,6 @@
   export let image = "";
   export let title = "Unknown";
   export let subtitle = "N/A";
-  export let description = "No description provided.";
 </script>
 
 <div class="card bg-background shadow-lg rounded-xl overflow-hidden border border-border max-w-sm">
