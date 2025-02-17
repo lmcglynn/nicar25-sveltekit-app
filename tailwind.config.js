@@ -1,8 +1,7 @@
-import { join } from 'path';
-import type { Config } from 'tailwindcss';
+const { join } = require('path');
 
 // 1. Import the Skeleton plugin
-import { skeleton } from '@skeletonlabs/tw-plugin';
+const { skeleton } = require('@skeletonlabs/tw-plugin');
 
 const config = {
 	// 2. Opt for dark mode to be handled via the class method
@@ -18,9 +17,10 @@ const config = {
 	plugins: [
 		// 4. Append the Skeleton plugin (after other plugins)
 		skeleton({
-		themes: { preset: [ "wintry" ] }
-	})
+			themes: { preset: [ "wintry" ] }
+		}),
+		require('@tailwindcss/aspect-ratio')
 	]
-} satisfies Config;
+};
 
-export default config;
+module.exports = config;
