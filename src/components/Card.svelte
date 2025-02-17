@@ -15,6 +15,5 @@
   <div class="p-4">
     <h2 class="text-xl font-bold">{title}</h2>
     <p class="text-sm text-muted">{subtitle}</p>
-    <p class="text-base text-foreground mt-2">{description}</p>
   </div>
 </div>

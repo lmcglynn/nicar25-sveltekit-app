@@ -9,7 +9,7 @@
 
   onMount(async () => {
     try {
-      const apiKey = import.meta.env.VITE_API_KEY
+      const apiKey = import.meta.env.VITE_API_KEY || null;
       const response = await fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${searchId}`, {
         headers: {
           'x-api-key': `${apiKey}`,
