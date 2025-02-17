@@ -1,14 +1,15 @@
 <script>
   import { LayerCake, ScaledSvg, Html, takeEvery } from "layercake";
   import { scaleBand } from "d3-scale";
-
   import Column from "$components/layercake/Column.svelte";
   import AxisX from "$components/layercake/AxisX.percent-range.html.svelte";
   import AxisY from "$components/layercake/AxisY.percent-range.html.svelte";
 
+  // Stores
   import { filteredBreedsStore } from "$stores/filteredBreedsStore";
   $: filteredBreeds = $filteredBreedsStore || [];
 
+  // Filtered data
   $: dataCountries = Object.entries(
     filteredBreeds.reduce((acc, obj) => {
       const value = obj.origin;

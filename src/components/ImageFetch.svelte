@@ -1,11 +1,6 @@
 <script>
   import { onMount } from 'svelte';
 
-  // Backup image
-  import CatIcon from '$lib/svg/cat.svg?component';
-  let fills = ["#66c2a5","#fc8d62","#8da0cb","#e78ac3","#a6d854","#ffd92f","#e5c494","#b3b3b3"];
-  let fill = fills[Math.floor(Math.random() * fills.length)];
-
   // Variables for fetching data
   let data;
   let loading = true;
@@ -14,6 +9,11 @@
   // Props
   export let searchId;
   export let altText;
+
+  // Backup image
+  import CatIcon from '$lib/svg/cat.svg?component';
+  let fillColorOptions = ["#66c2a5","#fc8d62","#8da0cb","#e78ac3","#a6d854","#ffd92f","#e5c494","#b3b3b3"];
+  let fill = fillColorOptions[Math.floor(Math.random() * fillColorOptions.length)];
 
   // 🐱 Uncomment lines 12-32 to access THE CAT API
 

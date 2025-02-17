@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') {
     if (value && value !== '') {
       localStorage.setItem('selectedCountry', value);
     } else {
-      localStorage.removeItem('selectedCountry'); // Clear if value is empty or "All" is selected
+      localStorage.removeItem('selectedCountry');
     }
   });
 }

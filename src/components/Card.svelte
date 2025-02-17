@@ -1,6 +1,8 @@
 <script>
   import '../app.css';
   import ImageFetch from './ImageFetch.svelte';
+
+  // Props
   export let image = "";
   export let title = "Unknown";
   export let subtitle = "N/A";

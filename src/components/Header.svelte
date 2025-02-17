@@ -1,7 +1,11 @@
 <script>
   import "../app.css";
-  export let options;  
+
+  // Stores
   import selectedCountry from '$stores/countryStore';
+
+  // Props
+  export let options;  
 </script> 
 
 <div class="header-container fixed w-full z-10 py-0 my-0 top-0">

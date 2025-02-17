@@ -4,6 +4,7 @@
   import selectedCountry from "$stores/countryStore";  
   import { filteredBreedsStore } from '$stores/filteredBreedsStore';
 
+  // Stores
   export let data;
   let countries = data.countries;
   let breeds = data.breeds;

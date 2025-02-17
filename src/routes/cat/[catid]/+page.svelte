@@ -1,23 +1,25 @@
 <script>
   import { page } from "$app/stores";
-
   import { LayerCake, Svg } from "layercake";
-
   import Radar from "$components/layercake/Radar.svelte";
   import AxisRadial from "$components/layercake/AxisRadial.svelte";
-  let catId = $page.params.catid;
   import ImageFetch from "$components/ImageFetch.svelte";
 
+  // Stores
   import { filteredBreedsStore } from "$stores/filteredBreedsStore";
+
+  // Params
+  let catId = $page.params.catid;
+
+  // Filter stored data with our param
   $: selectedCat = $filteredBreedsStore.filter(
     (breed) => breed.id === catId,
   )[0];
-
-  $: console.log();
 </script>
 
 <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-4 items-center">
-  <!-- Main Content -->
+
+  <!-- info box -->
   <div>
     <h2 class="text-2xl font-bold">{selectedCat.name}</h2>
     <p class="mt-2 text-gray-600">
@@ -42,10 +44,14 @@
       </li>
     </ul>
   </div>
+
+  <!-- image -->
   <div>
     <ImageFetch searchId={selectedCat.id} altText={selectedCat.name} />
   </div>
-  <div class="chart-container rounded-xl overflow-hidden border border-border max-w-sm">
+
+  <!-- chart 1 -->
+  <div class="chart-container p-2 rounded-xl overflow-hidden border border-border max-w-sm">
     <h3 class="font-bold">Braininess</h3>
     {#if typeof selectedCat === "object"}
       <LayerCake
@@ -68,7 +74,9 @@
       </LayerCake>
     {/if}
   </div>
-  <div class="chart-container rounded-xl overflow-hidden border border-border max-w-sm">
+
+  <!-- chart 2 -->
+  <div class="chart-container p-2 rounded-xl overflow-hidden border border-border max-w-sm">
     <h3 class="font-bold">Purrsonality</h3>
     {#if typeof selectedCat === "object"}
       <LayerCake
