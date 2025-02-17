@@ -1,22 +1,25 @@
-# sv
+# NICAR25: First SvelteKit data app
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Here's all the code you'll need to get up and running for the NICAR 2025 session on building a SvelteKit data app. 
 
-## Creating a project
+This project uses:
 
-If you're seeing this, you've probably already done this step. Congrats!
+- SvelteKit: UI framework, which handles the routing, code organization, and build steps
+- Tailwind: Provides CSS utility classes to make the styling simple
+- TheCatAPI: Provides our sample data and images
+- The Noun Project: Provides cat icon
+
+
+## Getting started
+
+
+In the home directory, run a standard install to get the project's dependencies.
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+After that, start a development server:
 
 ```bash
 npm run dev
