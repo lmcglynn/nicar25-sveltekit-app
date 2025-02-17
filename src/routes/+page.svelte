@@ -2,23 +2,11 @@
 
   import Card from '$components/Card.svelte';
   export let data;
-  let breedsData = data.breedsData;
-
-  $: weights = breedsData.reduce((acc, obj) => {
-    const value = obj.grooming;
-    if (acc[value]) {
-      acc[value] += 1;
-    } else {
-      acc[value] = 1;
-    }
-    return acc;
-  }, {});
-
-  $: console.log(weights);
+  let breeds = data.breeds;
 </script>
 
 <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-  {#each breedsData as breed}
+  {#each breeds as breed}
     <Card
       image={breed.id}
       title={breed.name}
